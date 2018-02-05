@@ -6,6 +6,7 @@ var gridY = 0;
 var max = 0;
 var xVal = new Array(gridX);
 var yVal = new Array(gridY);
+var isClassroomMode = false;
 
 function startGame(difficulty){
     switch (difficulty){
@@ -136,6 +137,23 @@ function roughScale(x, base) {
 
 function review(){
     //TODO action stub
+}
+
+function fireKeyPress(event){
+    switch(event.keyCode){
+        case 116:
+            isClassroomMode = !isClassroomMode;
+            if (isClassroomMode){
+                //TODO display seed modal
+            }
+            else {
+                //TODO change to toast
+                alert("Classroom mode deactivated");
+            }
+            break;
+        default:
+            break;
+    }
 }
 
 //PSEUDO_RANDOM SEED TEACHER MODE
