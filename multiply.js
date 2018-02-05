@@ -214,5 +214,3 @@ function registerSeed(){
     seed = temp;
     document.getElementById("seed-modal-bg").style.display = "none";
 }
-
-//PSEUDO_RANDOM SEED TEACHER MODE
