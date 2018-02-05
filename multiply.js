@@ -106,9 +106,6 @@ function finish(){
     while (j <= gridY) {
         var i = 1;
         while (i <= gridX){
-            console.log(roughScale(document.getElementById(i.toString() + "-" + j.toString()).value, 10)/100);
-            console.log((xVal[i-1]*yVal[j-1]));
-            console.log("------------------------");
             if (roughScale(document.getElementById(i.toString() + "-" + j.toString()).value, 10)/100 !== (xVal[i-1]*yVal[j-1])){
                 isIncorrect = true;
             }
