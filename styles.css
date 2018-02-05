@@ -1,0 +1,100 @@
+html, body, div, a, p, img, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Ruda', sans-serif;
+}
+body {
+    height: 100vh;
+    min-height: 10vh;
+    background: #e55550;
+    background: -moz-linear-gradient(45deg, #e55550 0%, #eda680 100%);
+    background: -webkit-linear-gradient(45deg, #e55550 0%,#eda680 100%);
+    background: linear-gradient(45deg, #e55550 0%,#eda680 100%);
+}
+.title{
+    text-align: center;
+    font-size: .6in;
+    color: white;
+    padding-top: .2in;
+    padding-bottom: .2in;
+}
+#init, #postsection{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.subtitle{
+    color: white;
+    font-size: .3in;
+    padding: .1in;
+}
+.fw-button{
+    width: 3in;
+    max-width: 80vw;
+    margin: .1in;
+    cursor: pointer;
+}
+#game{
+    display: none;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    flex-wrap: wrap;
+}
+.game-table{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.game-row {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.game-header-x, .game-header-y, .blank, .game-input {
+    text-align: center;
+    height: .8in;
+    width: .8in;
+    max-width: 15vw;
+    max-height: 15vw;
+    color: white;
+    font-size: .4in;
+}
+.game-input {
+    color: #e55550;
+    -webkit-appearance: none;
+    outline: none;
+}
+.done-button {
+    margin-top: .5in;
+}
+/* For Firefox */
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#postsection{
+    display: none;
+}
+#score-total{
+    color: white;
+    font-size: 1.5in;
+}

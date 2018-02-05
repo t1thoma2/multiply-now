@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiply! Now!</title>
+    <link href="https://fonts.googleapis.com/css?family=Ruda" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script rel="script" type="text/javascript" src="multiply.js"></script>
+</head>
+<body>
+    <div class="title">
+        Multiply! Now!
+    </div>
+    <div id="init">
+        <p class="subtitle">Start New Game</p>
+        <img class="fw-button" onclick="startGame(1)" src="img/easy.svg" />
+        <img class="fw-button" onclick="startGame(2)" src="img/medium.svg" />
+        <img class="fw-button" onclick="startGame(3)" src="img/hard.svg" />
+    </div>
+    <div id="game">
+    </div>
+    <div id="postsection">
+        <p class="subtitle">Current Score:</p>
+        <p id="score-total">$score</p>
+        <img class="fw-button" onclick="startSection()" src="img/tryagain.svg" />
+        <img class="fw-button" onclick="levelUp()" src="img/nextlevel.svg" />
+        <!--Review Button-->
+    </div>
+</body>
+</html>
