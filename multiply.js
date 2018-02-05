@@ -37,19 +37,27 @@ function startSection() {
     yVal = new Array(gridY);
     var i = 1;
     while (i <= gridX){
-        xVal[i-1] = Math.floor(Math.random() * max) + 1;
+        var t = Math.floor(Math.random() * max) + 1;
+            while (xVal.contains(t)){
+                t = Math.floor(Math.random() * max) + 1;
+            }
+        xVal[i-1] = t;
         i++;
     }
     var j = 1;
     while (j <= gridY){
-        yVal[j-1] = Math.floor(Math.random() * max) + 1;
+        t = Math.floor(Math.random() * max) + 1;
+        while (yVal.contains(t)){
+            t = Math.floor(Math.random() * max) + 1;
+        }
+        yVal[j-1] = t;
         j++;
     }
     document.getElementById("postsection").style.display = "none";
     document.getElementById("init").style.display = "none";
     document.getElementById("game").style.display = "flex";
     rounds++;
-    var tableHTML = "<div class='game-table'><div class='game-row'><p class='blank'></p>";
+    var tableHTML = "<div class='game-row' id='timer'>" + timePerRound.toString() + "</div><div class='game-table'><div class='game-row'><p class='blank'></p>";
     i = 1;
     while (i <= gridX){
         tableHTML = tableHTML + "<p class='game-header-x'>" + xVal[i-1].toString() + "</p>";
@@ -72,10 +80,26 @@ function startSection() {
 
     tableHTML = tableHTML + "<div class='game-row'><img class='fw-button done-button' onclick='finish();' src='img/done.svg' </div></div>";
     document.getElementById("game").innerHTML = tableHTML;
+    startTime();
+}
+var seconds_left;
+function startTime(){
+    seconds_left = timePerRound;
+    var interval = setInterval(function() {
+        document.getElementById('timer').innerHTML = --seconds_left;
+
+        if (seconds_left <= 0)
+        {
+            finish();
+            clearInterval(interval);
+        }
+    }, 1000);
 }
 
 function finish(){
     var isIncorrect = false;
+    var remainingTime = seconds_left;
+    seconds_left = 0;
 
     var j = 1;
     while (j <= gridY) {
@@ -92,9 +116,7 @@ function finish(){
         j++;
     }
     if (!isIncorrect){
-        //TODO add remaining time
-
-        savedTime++;
+        savedTime += remainingTime;
     }
     document.getElementById("game").style.display = "none";
     document.getElementById("postsection").style.display = "flex";
