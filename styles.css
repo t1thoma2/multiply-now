@@ -82,7 +82,7 @@ body {
     -webkit-appearance: none;
     outline: none;
 }
-.done-button {
+#done-button {
     margin-top: .5in;
 }
 /* For Firefox */
